@@ -1,564 +1,844 @@
 <!doctype html>
 <html lang="pt">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mellarie — Organização de Eventos</title>
-    <meta name="description"
-        content="A Mellarie é uma agência de organização de eventos sob medida — casamentos, aniversários, eventos corporativos e lançamentos 100% personalizados." />
+    <meta
+      name="description"
+      content="A Mellarie é uma agência de organização de eventos sob medida — casamentos, aniversários, eventos corporativos e lançamentos 100% personalizados."
+    />
     <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon" />
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            darkMode: "media",
-            theme: {
-                extend: {
-                    fontFamily: {
-                        heading: ['"Playfair Display"', "serif"],
-                        body: ["Inter", "sans-serif"],
-                    },
-                },
+      tailwind.config = {
+        darkMode: "media",
+        theme: {
+          extend: {
+            fontFamily: {
+              heading: ['"Playfair Display"', "serif"],
+              body: ["Inter", "sans-serif"],
             },
-        };
+          },
+        },
+      };
     </script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet" />
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        integrity="sha512-xxxx" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./styles/style.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-xxxx"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
 
-<body class="bg-zinc-50 text-zinc-800 dark:bg-zinc-950 dark:text-zinc-100 scroll-smooth font-body">
+  <body
+    class="bg-zinc-50 text-zinc-800 dark:bg-zinc-950 dark:text-zinc-100 scroll-smooth font-body"
+  >
     <!-- Header -->
-    <header id="site-header"
-        class="sticky top-0 z-50 transition-all duration-300 bg-white/60 dark:bg-zinc-950/60 backdrop-blur-sm border-b border-transparent">
-        <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-            <a href="#home" class="flex items-center">
-                <img src="assets/logo2.png" alt="Mellarie" class="h-14 w-auto dark:hidden" />
-                <img src="assets/logo.png" alt="Mellarie" class="h-14 w-auto hidden dark:block" />
-            </a>
-            <nav class="hidden md:flex items-center gap-1">
-                <a href="#home"
-                    class="px-3 py-2 text-sm font-medium rounded-lg text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 transition">Início</a>
-                <a href="#about"
-                    class="px-3 py-2 text-sm font-medium rounded-lg text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 transition">Quem
-                    somos</a>
-                <a href="#services"
-                    class="px-3 py-2 text-sm font-medium rounded-lg text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 transition">Serviços</a>
-                <a href="#contact"
-                    class="px-3 py-2 text-sm font-medium rounded-lg text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 transition">Contacto</a>
-                <a href="https://www.instagram.com/mellarieorganizacaodeeventos" target="_blank"
-                    class="ml-3 px-5 py-2 bg-amber-400 hover:bg-amber-500 text-zinc-900 font-bold text-sm rounded-lg shadow-md transition">Pedir
-                    orçamento</a>
-            </nav>
-            <button id="menu-toggle"
-                class="md:hidden p-2 rounded-lg text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </div>
-        <!-- Mobile menu -->
-        <div id="mobile-menu"
-            class="hidden md:hidden border-t border-zinc-200 dark:border-zinc-800 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md px-6 pb-4 pt-3 flex flex-col gap-1">
-            <a href="#home"
-                class="px-3 py-2.5 text-sm font-medium rounded-lg text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800">Início</a>
-            <a href="#about"
-                class="px-3 py-2.5 text-sm font-medium rounded-lg text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800">Quem
-                somos</a>
-            <a href="#services"
-                class="px-3 py-2.5 text-sm font-medium rounded-lg text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800">Serviços</a>
-            <a href="#contact"
-                class="px-3 py-2.5 text-sm font-medium rounded-lg text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800">Contacto</a>
-            <a href="https://www.instagram.com/mellarieorganizacaodeeventos" target="_blank"
-                class="mt-2 px-5 py-3 bg-amber-400 hover:bg-amber-500 text-zinc-900 font-bold text-sm rounded-lg text-center shadow-md transition">Pedir
-                orçamento</a>
-        </div>
+    <header
+      id="site-header"
+      class="sticky top-0 z-50 transition-all duration-300 bg-white/60 dark:bg-zinc-950/60 backdrop-blur-sm border-b border-transparent"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between"
+      >
+        <a href="#home" class="flex items-center">
+          <img
+            src="assets/logo2.png"
+            alt="Mellarie"
+            class="h-14 w-auto dark:hidden"
+          />
+          <img
+            src="assets/logo.png"
+            alt="Mellarie"
+            class="h-14 w-auto hidden dark:block"
+          />
+        </a>
+        <nav class="hidden md:flex items-center gap-1">
+          <a
+            href="#home"
+            class="px-3 py-2 text-sm font-medium rounded-lg text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 transition"
+            >Início</a
+          >
+          <a
+            href="#about"
+            class="px-3 py-2 text-sm font-medium rounded-lg text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 transition"
+            >Quem somos</a
+          >
+          <a
+            href="#services"
+            class="px-3 py-2 text-sm font-medium rounded-lg text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 transition"
+            >Serviços</a
+          >
+          <a
+            href="#contact"
+            class="px-3 py-2 text-sm font-medium rounded-lg text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 transition"
+            >Contacto</a
+          >
+          <a
+            href="https://www.instagram.com/mellarieorganizacaodeeventos"
+            target="_blank"
+            class="ml-3 px-5 py-2 bg-amber-400 hover:bg-amber-500 text-zinc-900 font-bold text-sm rounded-lg shadow-md transition"
+            >Pedir orçamento</a
+          >
+        </nav>
+        <button
+          id="menu-toggle"
+          class="md:hidden p-2 rounded-lg text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        </button>
+      </div>
+      <!-- Mobile menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden border-t border-zinc-200 dark:border-zinc-800 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md px-6 pb-4 pt-3 flex flex-col gap-1"
+      >
+        <a
+          href="#home"
+          class="px-3 py-2.5 text-sm font-medium rounded-lg text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+          >Início</a
+        >
+        <a
+          href="#about"
+          class="px-3 py-2.5 text-sm font-medium rounded-lg text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+          >Quem somos</a
+        >
+        <a
+          href="#services"
+          class="px-3 py-2.5 text-sm font-medium rounded-lg text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+          >Serviços</a
+        >
+        <a
+          href="#contact"
+          class="px-3 py-2.5 text-sm font-medium rounded-lg text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+          >Contacto</a
+        >
+        <a
+          href="https://www.instagram.com/mellarieorganizacaodeeventos"
+          target="_blank"
+          class="mt-2 px-5 py-3 bg-amber-400 hover:bg-amber-500 text-zinc-900 font-bold text-sm rounded-lg text-center shadow-md transition"
+          >Pedir orçamento</a
+        >
+      </div>
     </header>
 
     <!-- Hero -->
-    <section id="home" class="relative min-h-[92vh] flex items-center overflow-hidden">
-        <div class="hero-bg absolute inset-0 bg-cover bg-center will-change-transform" aria-hidden="true"></div>
-        <div class="absolute inset-0 bg-gradient-to-br from-black/70 via-black/45 to-amber-400/25" aria-hidden="true">
+    <section
+      id="home"
+      class="relative min-h-[92vh] flex items-center overflow-hidden"
+    >
+      <div
+        class="hero-bg absolute inset-0 bg-cover bg-center will-change-transform"
+        aria-hidden="true"
+      ></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-black/70 via-black/45 to-amber-400/25"
+        aria-hidden="true"
+      ></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 py-20 w-full">
+        <div class="max-w-2xl">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-amber-400/20 border border-amber-400/40 text-amber-300 text-sm font-medium"
+          >
+            <span
+              class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"
+            ></span>
+            Organização de Eventos Premium
+          </div>
+          <h1
+            class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white"
+            style="font-family: var(--font-heading)"
+          >
+            Transformamos a tua <span class="text-amber-400">história</span> em
+            experiências inesquecíveis
+          </h1>
+          <p class="mt-6 text-lg text-zinc-200 leading-relaxed max-w-xl">
+            Eventos pensados ao detalhe, 100% personalizados — porque cada
+            celebração merece ser única como quem a vive.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a
+              href="https://www.instagram.com/mellarieorganizacaodeeventos"
+              target="_blank"
+              class="inline-flex items-center gap-2 px-7 py-3.5 bg-amber-400 hover:bg-amber-500 text-zinc-900 font-bold rounded-xl shadow-lg transition transform hover:scale-105"
+            >
+              Pede o teu orçamento
+            </a>
+            <a
+              href="#services"
+              class="inline-flex items-center gap-2 px-7 py-3.5 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl border border-white/25 backdrop-blur-sm hover:scale-105 transition"
+            >
+              Ver serviços
+            </a>
+          </div>
         </div>
-        <div class="relative z-10 max-w-7xl mx-auto px-6 py-20 w-full">
-            <div class="max-w-2xl">
-                <div
-                    class="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-amber-400/20 border border-amber-400/40 text-amber-300 text-sm font-medium">
-                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-                    Organização de Eventos Premium
-                </div>
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white"
-                    style="font-family: var(--font-heading)">
-                    Transformamos a tua <span class="text-amber-400">história</span> em
-                    experiências inesquecíveis
-                </h1>
-                <p class="mt-6 text-lg text-zinc-200 leading-relaxed max-w-xl">
-                    Eventos pensados ao detalhe, 100% personalizados — porque cada
-                    celebração merece ser única como quem a vive.
-                </p>
-                <div class="mt-8 flex flex-wrap gap-3">
-                    <a href="https://www.instagram.com/mellarieorganizacaodeeventos" target="_blank"
-                        class="inline-flex items-center gap-2 px-7 py-3.5 bg-amber-400 hover:bg-amber-500 text-zinc-900 font-bold rounded-xl shadow-lg transition transform hover:scale-105">
-                        Pede o teu orçamento
-                    </a>
-                    <a href="#services"
-                        class="inline-flex items-center gap-2 px-7 py-3.5 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl border border-white/25 backdrop-blur-sm hover:scale-105 transition">
-                        Ver serviços
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="absolute bottom-0 left-0 right-0" aria-hidden="true">
-            <svg viewBox="0 0 1440 60" class="w-full fill-zinc-50 dark:fill-zinc-950" preserveAspectRatio="none">
-                <path d="M0,60 C480,0 960,0 1440,60 L1440,60 L0,60 Z" />
-            </svg>
-        </div>
+      </div>
+      <div class="absolute bottom-0 left-0 right-0" aria-hidden="true">
+        <svg
+          viewBox="0 0 1440 60"
+          class="w-full fill-zinc-50 dark:fill-zinc-950"
+          preserveAspectRatio="none"
+        >
+          <path d="M0,60 C480,0 960,0 1440,60 L1440,60 L0,60 Z" />
+        </svg>
+      </div>
     </section>
 
     <!-- About -->
     <section id="about" class="py-20 bg-zinc-50 dark:bg-zinc-950">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="reveal text-center max-w-2xl mx-auto mb-14">
-                <span
-                    class="inline-block px-4 py-1 mb-4 text-xs font-semibold uppercase tracking-widest text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 rounded-full border border-amber-200 dark:border-amber-800">Sobre
-                    nós</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white">
-                    Quem somos
-                </h2>
-                <p class="mt-4 text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                    A Mellarie é uma agência de
-                    <strong class="text-zinc-800 dark:text-zinc-200">Organização de Eventos sob Medida</strong>. Não
-                    trabalhamos com pacotes pré-definidos; a nossa essência é
-                    decodificar a personalidade e os desejos do cliente para criar
-                    eventos que lhes pertençam verdadeiramente.
-                </p>
-            </div>
-            <div class="grid md:grid-cols-2 gap-10 items-center">
-                <div class="reveal-left relative flex justify-center">
-                    <img src="assets/team.jpg" alt="Equipa Mellarie"
-                        class="w-full max-w-sm rounded-2xl shadow-2xl shadow-zinc-400/30 dark:shadow-black/50 object-cover aspect-[4/5]" />
-                </div>
-                <div class="flex flex-col gap-4">
-                    <!-- Missão -->
-                    <div
-                        class="reveal dark:bg-black rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
-                        <div class="flex items-center gap-3 mb-3">
-                            <div
-                                class="w-9 h-9 rounded-lg bg-amber-100 dark:bg-amber-950/60 flex items-center justify-center">
-                                <i class="fa-solid fa-star text-amber-500"></i>
-                            </div>
-                            <h3 class="font-bold text-zinc-900 dark:text-white text-lg">
-                                Missão
-                            </h3>
-                        </div>
-                        <p class="text-sm text-zinc-600 dark:text-white leading-relaxed">
-                            Organizar eventos que sejam
-                            <strong class="text-zinc-800 dark:text-zinc-200">experiências inesquecíveis</strong>,
-                            traduzindo a personalidade, a história e os valores dos
-                            nossos clientes em celebrações autênticas.
-                        </p>
-                    </div>
-                    <!-- Valores -->
-                    <div
-                        class="reveal delay-100 dark:bg-black rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div
-                                class="w-9 h-9 rounded-lg bg-amber-100 dark:bg-amber-950/60 flex items-center justify-center">
-                                <i class="fa-solid fa-gem text-amber-500"></i>
-                            </div>
-                            <h3 class="font-bold text-zinc-900 dark:text-white text-lg">
-                                Valores
-                            </h3>
-                        </div>
-                        <ul class="grid grid-cols-2 gap-2">
-                            <li class="flex items-center gap-2 text-sm text-zinc-600 dark:text-white font-medium">
-                                <i class="fa-solid fa-diamond text-amber-500"></i>
-                                Autenticidade
-                            </li>
-                            <li class="flex items-center gap-2 text-sm text-zinc-600 dark:text-white font-medium">
-                                <i class="fa-solid fa-star text-amber-500"></i> Curadoria
-                            </li>
-                            <li class="flex items-center gap-2 text-sm text-zinc-600 dark:text-white font-medium">
-                                <i class="fa-solid fa-heart text-amber-500"></i> Empatia
-                            </li>
-                            <li class="flex items-center gap-2 text-sm text-zinc-600 dark:text-white font-medium">
-                                <i class="fa-solid fa-cogs text-amber-500"></i> Excelência
-                                Operacional
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- Equipa -->
-                    <div
-                        class="reveal delay-200 dark:bg-black rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div
-                                class="w-9 h-9 rounded-lg bg-amber-100 dark:bg-amber-950/60 flex items-center justify-center">
-                                <i class="fa-solid fa-user-group text-amber-500"></i>
-                            </div>
-                            <h3 class="font-bold text-zinc-900 dark:text-white text-lg">
-                                A nossa equipa
-                            </h3>
-                        </div>
-                        <ul class="flex flex-col gap-2">
-                            <li class="flex items-center gap-2 text-sm text-zinc-600 dark:text-white font-medium">
-                                <i class="fa-solid fa-user text-amber-500"></i> Laura Dolci
-                            </li>
-                            <li class="flex items-center gap-2 text-sm text-zinc-600 dark:text-white font-medium">
-                                <i class="fa-solid fa-user text-amber-500"></i> Mell Pinheiro
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="reveal text-center max-w-2xl mx-auto mb-14">
+          <span
+            class="inline-block px-4 py-1 mb-4 text-xs font-semibold uppercase tracking-widest text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 rounded-full border border-amber-200 dark:border-amber-800"
+            >Sobre nós</span
+          >
+          <h2
+            class="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white"
+          >
+            Quem somos
+          </h2>
+          <p class="mt-4 text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            A Mellarie é uma agência de
+            <strong class="text-zinc-800 dark:text-zinc-200"
+              >Organização de Eventos sob Medida</strong
+            >. Não trabalhamos com pacotes pré-definidos; a nossa essência é
+            decodificar a personalidade e os desejos do cliente para criar
+            eventos que lhes pertençam verdadeiramente.
+          </p>
         </div>
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+          <div class="reveal-left relative flex justify-center">
+            <img
+              src="assets/team.jpg"
+              alt="Equipa Mellarie"
+              class="w-full max-w-sm rounded-2xl shadow-2xl shadow-zinc-400/30 dark:shadow-black/50 object-cover aspect-[4/5]"
+            />
+          </div>
+          <div class="flex flex-col gap-4">
+            <!-- Missão -->
+            <div
+              class="reveal dark:bg-black rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300"
+            >
+              <div class="flex items-center gap-3 mb-3">
+                <div
+                  class="w-9 h-9 rounded-lg bg-amber-100 dark:bg-amber-950/60 flex items-center justify-center"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-amber-500">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+</svg>
+
+                </div>
+                <h3 class="font-bold text-zinc-900 dark:text-white text-lg">
+                  Missão
+                </h3>
+              </div>
+              <p class="text-sm text-zinc-600 dark:text-white leading-relaxed">
+                Organizar eventos que sejam
+                <strong class="text-zinc-800 dark:text-zinc-200"
+                  >experiências inesquecíveis</strong
+                >, traduzindo a personalidade, a história e os valores dos
+                nossos clientes em celebrações autênticas.
+              </p>
+            </div>
+            <!-- Valores -->
+            <div
+              class="reveal delay-100 dark:bg-black rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300"
+            >
+              <div class="flex items-center gap-3 mb-4">
+                <div
+                  class="w-9 h-9 rounded-lg bg-amber-100 dark:bg-amber-950/60 flex items-center justify-center"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-amber-500">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+</svg>
+
+                </div>
+                <h3 class="font-bold text-zinc-900 dark:text-white text-lg">
+                  Valores
+                </h3>
+              </div>
+              <ul class="grid grid-cols-2 gap-2">
+                <li
+                  class="flex items-center gap-2 text-sm text-zinc-600 dark:text-white font-medium"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.16509 4.45923C5.55285 3.71602 6.32162 3.25 7.15991 3.25H16.8414C17.6796 3.25 18.4484 3.71602 18.8362 4.45923L20.9472 8.50541C21.3717 9.31907 21.2595 10.309 20.6637 11.007L12.5711 20.4869C12.4286 20.6539 12.2201 20.75 12.0006 20.75C11.7812 20.75 11.5727 20.6539 11.4302 20.4869L3.33758 11.007C2.74173 10.309 2.62952 9.31907 3.05404 8.50541L5.16509 4.45923ZM7.15991 4.75C6.88048 4.75 6.62422 4.90534 6.49497 5.15308L4.38392 9.19926C4.24241 9.47048 4.27981 9.80046 4.47843 10.0331L12.0006 18.8448L19.5228 10.0331C19.7214 9.80046 19.7588 9.47048 19.6173 9.19926L17.5063 5.15308C17.377 4.90534 17.1208 4.75 16.8414 4.75H7.15991Z" fill="#ffffff"/>
+</svg>
+
+                  Autenticidade
+                </li>
+                <li
+                  class="flex items-center gap-2 text-sm text-zinc-600 dark:text-white font-medium"
+                >
+                  <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.9996 2.125C12.2851 2.125 12.5459 2.28707 12.6722 2.54308L15.3264 7.9211L21.2614 8.78351C21.5439 8.82456 21.7786 9.02244 21.8669 9.29395C21.9551 9.56546 21.8815 9.86351 21.6771 10.0628L17.3825 14.249L18.3963 20.16C18.4445 20.4414 18.3289 20.7257 18.0979 20.8936C17.867 21.0614 17.5608 21.0835 17.3081 20.9506L11.9996 18.1598L6.69122 20.9506C6.43853 21.0835 6.13233 21.0614 5.90137 20.8936C5.67041 20.7257 5.55475 20.4414 5.603 20.16L6.61682 14.249L2.32222 10.0628C2.11779 9.86351 2.04421 9.56546 2.13243 9.29395C2.22065 9.02244 2.45536 8.82456 2.73788 8.78351L8.67288 7.9211L11.3271 2.54308C11.4534 2.28707 11.7142 2.125 11.9996 2.125ZM11.9996 4.56966L9.84348 8.93853C9.73423 9.15989 9.52306 9.31331 9.27878 9.34881L4.45745 10.0494L7.94619 13.4501C8.12296 13.6224 8.20362 13.8706 8.16189 14.1139L7.33831 18.9158L11.6506 16.6487C11.8691 16.5338 12.1302 16.5338 12.3486 16.6487L16.661 18.9158L15.8374 14.1139C15.7957 13.8706 15.8763 13.6224 16.0531 13.4501L19.5418 10.0494L14.7205 9.34881C14.4762 9.31331 14.2651 9.15989 14.1558 8.93853L11.9996 4.56966Z" fill="#ffffff"/>
+</svg>
+ Curadoria
+                </li>
+                <li
+                  class="flex items-center gap-2 text-sm text-zinc-600 dark:text-white font-medium"
+                >
+                  <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.9996 2.125C12.2851 2.125 12.5459 2.28707 12.6722 2.54308L15.3264 7.9211L21.2614 8.78351C21.5439 8.82456 21.7786 9.02244 21.8669 9.29395C21.9551 9.56546 21.8815 9.86351 21.6771 10.0628L17.3825 14.249L18.3963 20.16C18.4445 20.4414 18.3289 20.7257 18.0979 20.8936C17.867 21.0614 17.5608 21.0835 17.3081 20.9506L11.9996 18.1598L6.69122 20.9506C6.43853 21.0835 6.13233 21.0614 5.90137 20.8936C5.67041 20.7257 5.55475 20.4414 5.603 20.16L6.61682 14.249L2.32222 10.0628C2.11779 9.86351 2.04421 9.56546 2.13243 9.29395C2.22065 9.02244 2.45536 8.82456 2.73788 8.78351L8.67288 7.9211L11.3271 2.54308C11.4534 2.28707 11.7142 2.125 11.9996 2.125ZM11.9996 4.56966L9.84348 8.93853C9.73423 9.15989 9.52306 9.31331 9.27878 9.34881L4.45745 10.0494L7.94619 13.4501C8.12296 13.6224 8.20362 13.8706 8.16189 14.1139L7.33831 18.9158L11.6506 16.6487C11.8691 16.5338 12.1302 16.5338 12.3486 16.6487L16.661 18.9158L15.8374 14.1139C15.7957 13.8706 15.8763 13.6224 16.0531 13.4501L19.5418 10.0494L14.7205 9.34881C14.4762 9.31331 14.2651 9.15989 14.1558 8.93853L11.9996 4.56966Z" fill="#ffffff"/>
+</svg>
+ Empatia
+                </li>
+                <li
+                  class="flex items-center gap-2 text-sm text-zinc-600 dark:text-white font-medium"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-white">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 0 1 1.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.559.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.894.149c-.424.07-.764.383-.929.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 0 1-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.398.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 0 1-.12-1.45l.527-.737c.25-.35.272-.806.108-1.204-.165-.397-.506-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.108-1.204l-.526-.738a1.125 1.125 0 0 1 .12-1.45l.773-.773a1.125 1.125 0 0 1 1.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894Z" />
+  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+</svg>
+
+ Excelência
+                  Operacional
+                </li>
+              </ul>
+            </div>
+            <!-- Equipa -->
+            <div
+              class="reveal delay-200 dark:bg-black rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300"
+            >
+              <div class="flex items-center gap-3 mb-4">
+                <div
+                  class="w-9 h-9 rounded-lg bg-amber-100 dark:bg-amber-950/60 flex items-center justify-center"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-amber-500">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 0 1 1.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.559.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.894.149c-.424.07-.764.383-.929.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 0 1-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.398.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 0 1-.12-1.45l.527-.737c.25-.35.272-.806.108-1.204-.165-.397-.506-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.108-1.204l-.526-.738a1.125 1.125 0 0 1 .12-1.45l.773-.773a1.125 1.125 0 0 1 1.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894Z" />
+  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+</svg>
+
+                </div>
+                <h3 class="font-bold text-zinc-900 dark:text-white text-lg">
+                  A nossa equipa
+                </h3>
+              </div>
+              <ul class="flex flex-col gap-2">
+                <li
+                  class="flex items-center gap-2 text-sm text-zinc-600 dark:text-white font-medium"
+                >
+                  <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M16.4337 6.35C16.4337 8.74 14.4937 10.69 12.0937 10.69L12.0837 10.68C9.69365 10.68 7.74365 8.73 7.74365 6.34C7.74365 3.95 9.70365 2 12.0937 2C14.4837 2 16.4337 3.96 16.4337 6.35ZM14.9337 6.34C14.9337 4.78 13.6637 3.5 12.0937 3.5C10.5337 3.5 9.25365 4.78 9.25365 6.34C9.25365 7.9 10.5337 9.18 12.0937 9.18C13.6537 9.18 14.9337 7.9 14.9337 6.34Z" fill="#ffffff"/>
+<path d="M12.0235 12.1895C14.6935 12.1895 16.7835 12.9395 18.2335 14.4195V14.4095C20.2801 16.4956 20.2739 19.2563 20.2735 19.4344L20.2735 19.4395C20.2635 19.8495 19.9335 20.1795 19.5235 20.1795H19.5135C19.0935 20.1695 18.7735 19.8295 18.7735 19.4195C18.7735 19.3695 18.7735 17.0895 17.1535 15.4495C15.9935 14.2795 14.2635 13.6795 12.0235 13.6795C9.78346 13.6795 8.05346 14.2795 6.89346 15.4495C5.27346 17.0995 5.27346 19.3995 5.27346 19.4195C5.27346 19.8295 4.94346 20.1795 4.53346 20.1795C4.17346 20.1995 3.77346 19.8595 3.77346 19.4495L3.77345 19.4448C3.77305 19.2771 3.76646 16.506 5.81346 14.4195C7.26346 12.9395 9.35346 12.1895 12.0235 12.1895Z" fill="#ffffff"/>
+</svg>
+ Laura Dolci
+                </li>
+                <li
+                  class="flex items-center gap-2 text-sm text-zinc-600 dark:text-white font-medium"
+                >
+                  <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M16.4337 6.35C16.4337 8.74 14.4937 10.69 12.0937 10.69L12.0837 10.68C9.69365 10.68 7.74365 8.73 7.74365 6.34C7.74365 3.95 9.70365 2 12.0937 2C14.4837 2 16.4337 3.96 16.4337 6.35ZM14.9337 6.34C14.9337 4.78 13.6637 3.5 12.0937 3.5C10.5337 3.5 9.25365 4.78 9.25365 6.34C9.25365 7.9 10.5337 9.18 12.0937 9.18C13.6537 9.18 14.9337 7.9 14.9337 6.34Z" fill="#ffffff"/>
+<path d="M12.0235 12.1895C14.6935 12.1895 16.7835 12.9395 18.2335 14.4195V14.4095C20.2801 16.4956 20.2739 19.2563 20.2735 19.4344L20.2735 19.4395C20.2635 19.8495 19.9335 20.1795 19.5235 20.1795H19.5135C19.0935 20.1695 18.7735 19.8295 18.7735 19.4195C18.7735 19.3695 18.7735 17.0895 17.1535 15.4495C15.9935 14.2795 14.2635 13.6795 12.0235 13.6795C9.78346 13.6795 8.05346 14.2795 6.89346 15.4495C5.27346 17.0995 5.27346 19.3995 5.27346 19.4195C5.27346 19.8295 4.94346 20.1795 4.53346 20.1795C4.17346 20.1995 3.77346 19.8595 3.77346 19.4495L3.77345 19.4448C3.77305 19.2771 3.76646 16.506 5.81346 14.4195C7.26346 12.9395 9.35346 12.1895 12.0235 12.1895Z" fill="#ffffff"/>
+</svg>
+ Mell Pinheiro
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Services -->
     <section id="services" class="py-20 bg-white dark:bg-neutral-950">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="reveal text-center max-w-2xl mx-auto mb-14">
-                <span
-                    class="inline-block px-4 py-1 mb-4 text-xs font-semibold uppercase tracking-widest text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 rounded-full border border-amber-200 dark:border-amber-800">O
-                    que fazemos</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white">
-                    Serviços
-                </h2>
-                <p class="mt-4 text-zinc-600 dark:text-white leading-relaxed">
-                    Projetamos eventos sob medida — trabalhamos com fornecedores
-                    selecionados e oferecemos gestão completa, consultoria criativa ou
-                    apoio parcial, conforme a necessidade do cliente.
-                </p>
-            </div>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
-                <!-- Service cards -->
-                <div
-                    class="reveal delay-100 group dark:bg-black rounded-2xl p-6 flex flex-col gap-4 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-default">
-                    <div
-                        class="w-12 h-12 rounded-xl bg-amber-50 dark:bg-amber-950/40 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <i class="fa-solid fa-ring text-amber-500"></i>
-                    </div>
-                    <h3 class="font-bold text-zinc-900 dark:text-white text-lg">
-                        Casamentos
-                    </h3>
-                    <p class="text-sm text-zinc-600 dark:text-white leading-relaxed flex-1">
-                        Do pedido de casamento à última dança — planeamos cada detalhe
-                        para que o vosso dia seja absolutamente perfeito.
-                    </p>
-                </div>
-                <div
-                    class="reveal delay-200 group dark:bg-black rounded-2xl p-6 flex flex-col gap-4 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-default">
-                    <div
-                        class="w-12 h-12 rounded-xl bg-amber-50 dark:bg-amber-950/40 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <i class="fa-solid fa-birthday-cake text-amber-500"></i>
-                    </div>
-                    <h3 class="font-bold text-zinc-900 dark:text-white text-lg">
-                        Aniversários
-                    </h3>
-                    <p class="text-sm text-zinc-600 dark:text-white leading-relaxed flex-1">
-                        Celebrações que ficam na memória: da festa íntima à grande gala,
-                        criamos o ambiente certo para cada momento.
-                    </p>
-                </div>
-                <div
-                    class="reveal delay-300 group dark:bg-black rounded-2xl p-6 flex flex-col gap-4 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-default">
-                    <div
-                        class="w-12 h-12 rounded-xl bg-amber-50 dark:bg-amber-950/40 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <i class="fa-solid fa-briefcase text-amber-500"></i>
-                    </div>
-                    <h3 class="font-bold text-zinc-900 dark:text-white text-lg">
-                        Corporativos
-                    </h3>
-                    <p class="text-sm text-zinc-600 dark:text-white leading-relaxed flex-1">
-                        Eventos empresariais com impacto — team buildings, conferências e
-                        jantares de gala que elevam a imagem da sua empresa.
-                    </p>
-                </div>
-                <div
-                    class="reveal delay-400 group dark:bg-black rounded-2xl p-6 flex flex-col gap-4 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-default">
-                    <div
-                        class="w-12 h-12 rounded-xl bg-amber-50 dark:bg-amber-950/40 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="size-6 text-amber-500">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
-                        </svg>
-                    </div>
-                    <h3 class="font-bold text-zinc-900 dark:text-white text-lg">
-                        Lançamentos
-                    </h3>
-                    <p class="text-sm text-zinc-600 dark:text-white leading-relaxed flex-1">
-                        Estreias, lançamentos de produtos e inaugurações pensadas para
-                        criar buzz e impressionar desde o primeiro momento.
-                    </p>
-                </div>
-            </div>
-            <!-- Gallery -->
-            <div class="reveal mb-4">
-                <h3 class="text-xl font-bold text-zinc-900 dark:text-white mb-6">
-                    Exemplos de eventos
-                </h3>
-            </div>
-            <div class="grid md:grid-cols-3 gap-4 mb-16">
-                <div class="reveal delay-100 group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer">
-                    <img src="assets/event1.jpg" alt="Evento especial"
-                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                    <div
-                        class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-end p-4">
-                        <span
-                            class="text-white font-semibold text-sm translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">Evento
-                            especial</span>
-                    </div>
-                </div>
-                <div class="reveal delay-200 group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer">
-                    <img src="assets/event2.jpg" alt="Celebração única"
-                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                    <div
-                        class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-end p-4">
-                        <span
-                            class="text-white font-semibold text-sm translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">Celebração
-                            única</span>
-                    </div>
-                </div>
-                <div class="reveal delay-300 group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer">
-                    <img src="assets/event3.jpg" alt="Momento inesquecível"
-                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                    <div
-                        class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-end p-4">
-                        <span
-                            class="text-white font-semibold text-sm translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">Momento
-                            inesquecível</span>
-                    </div>
-                </div>
-            </div>
-            <!-- Price accordion -->
-            <div class="reveal">
-                <button id="price-toggle"
-                    class="w-full flex items-center justify-between px-6 py-4 dark:bg-black rounded-2xl font-bold text-zinc-900 dark:text-white hover:shadow-md transition-all duration-200">
-                    <span>Política de Preço</span>
-                    <i class="fa-solid fa-chevron-down transition-transform duration-300" id="price-icon"></i>
-                </button>
-                <div id="price-content"
-                    class="overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out">
-                    <div class="dark:bg-black rounded-2xl p-6 grid sm:grid-cols-3 gap-6">
-                        <div>
-                            <h4 class="font-bold text-zinc-900 dark:text-white mb-3">
-                                Método de Determinação
-                            </h4>
-                            <ul class="space-y-1.5">
-                                <li class="flex gap-2 text-sm text-zinc-600 dark:text-white">
-                                    <span class="text-amber-500 mt-0.5 shrink-0">•</span> Custos
-                                    operacionais diretos (fornecedores, materiais, deslocações,
-                                    etc.);
-                                </li>
-                                <li class="flex gap-2 text-sm text-zinc-600 dark:text-white">
-                                    <span class="text-amber-500 mt-0.5 shrink-0">•</span> Margem
-                                    de lucro adequada ao posicionamento premium;
-                                </li>
-                                <li class="flex gap-2 text-sm text-zinc-600 dark:text-white">
-                                    <span class="text-amber-500 mt-0.5 shrink-0">•</span>
-                                    Análise comparativa com concorrentes do mesmo segmento.
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-zinc-900 dark:text-white mb-3">
-                                Condições de Venda
-                            </h4>
-                            <ul class="space-y-1.5">
-                                <li class="flex gap-2 text-sm text-zinc-600 dark:text-white">
-                                    <span class="text-amber-500 mt-0.5 shrink-0">•</span>
-                                    Orçamentos personalizados conforme tipo e dimensão do
-                                    evento;
-                                </li>
-                                <li class="flex gap-2 text-sm text-zinc-600 dark:text-white">
-                                    <span class="text-amber-500 mt-0.5 shrink-0">•</span>
-                                    Pagamento faseado (sinalização + liquidação final);
-                                </li>
-                                <li class="flex gap-2 text-sm text-zinc-600 dark:text-white">
-                                    <span class="text-amber-500 mt-0.5 shrink-0">•</span>
-                                    Descontos possíveis em eventos de grande porte ou contratos
-                                    recorrentes.
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-zinc-900 dark:text-white mb-3">
-                                Objetivos
-                            </h4>
-                            <ul class="space-y-1.5">
-                                <li class="flex gap-2 text-sm text-zinc-600 dark:text-white">
-                                    <span class="text-amber-500 mt-0.5 shrink-0">•</span>
-                                    Equilibrar acessibilidade e rentabilidade;
-                                </li>
-                                <li class="flex gap-2 text-sm text-zinc-600 dark:text-white">
-                                    <span class="text-amber-500 mt-0.5 shrink-0">•</span>
-                                    Garantir preços justos mantendo qualidade premium;
-                                </li>
-                                <li class="flex gap-2 text-sm text-zinc-600 dark:text-white">
-                                    <span class="text-amber-500 mt-0.5 shrink-0">•</span>
-                                    Fidelizar clientes através de transparência e excelência.
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="reveal text-center max-w-2xl mx-auto mb-14">
+          <span
+            class="inline-block px-4 py-1 mb-4 text-xs font-semibold uppercase tracking-widest text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 rounded-full border border-amber-200 dark:border-amber-800"
+            >O que fazemos</span
+          >
+          <h2
+            class="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white"
+          >
+            Serviços
+          </h2>
+          <p class="mt-4 text-zinc-600 dark:text-white leading-relaxed">
+            Projetamos eventos sob medida — trabalhamos com fornecedores
+            selecionados e oferecemos gestão completa, consultoria criativa ou
+            apoio parcial, conforme a necessidade do cliente.
+          </p>
         </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
+          <!-- Service cards -->
+          <div
+            class="reveal delay-100 group dark:bg-black rounded-2xl p-6 flex flex-col gap-4 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-default"
+          >
+            <div
+              class="w-12 h-12 rounded-xl bg-amber-50 dark:bg-amber-950/40 flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C17.5225 2 22 6.4775 22 12C22 17.5225 17.5225 22 12 22C6.4775 22 2 17.5225 2 12C2 6.4775 6.4775 2 12 2ZM12 5.02246C10.1495 5.02246 8.37494 5.75787 7.06641 7.06641C5.75787 8.37494 5.02246 10.1495 5.02246 12C5.02246 13.8505 5.75787 15.6251 7.06641 16.9336C8.29322 18.1604 9.92962 18.8833 11.6543 18.9688C11.7692 18.9744 11.8844 18.9775 12 18.9775C12.1156 18.9775 12.2308 18.9744 12.3457 18.9688C14.0704 18.8833 15.7068 18.1604 16.9336 16.9336C18.2421 15.6251 18.9775 13.8505 18.9775 12C18.9775 10.1495 18.2421 8.37494 16.9336 7.06641C15.6251 5.75787 13.8505 5.02246 12 5.02246Z" fill="#fe9a00"/>
+</svg>
+
+            </div>
+            <h3 class="font-bold text-zinc-900 dark:text-white text-lg">
+              Casamentos
+            </h3>
+            <p
+              class="text-sm text-zinc-600 dark:text-white leading-relaxed flex-1"
+            >
+              Do pedido de casamento à última dança — planeamos cada detalhe
+              para que o vosso dia seja absolutamente perfeito.
+            </p>
+          </div>
+          <div
+            class="reveal delay-200 group dark:bg-black rounded-2xl p-6 flex flex-col gap-4 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-default"
+          >
+            <div
+              class="w-12 h-12 rounded-xl bg-amber-50 dark:bg-amber-950/40 flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M20.25 7.7494V6.75C20.25 5.50736 19.2426 4.5 18 4.5H6C4.75736 4.5 3.75 5.50736 3.75 6.75V7.7494C3.74973 7.761 3.74973 7.77257 3.75 7.78411V10.8058C2.74801 11.0331 2 11.9292 2 13V18.75C2 19.1642 2.33579 19.5 2.75 19.5H21.25C21.6642 19.5 22 19.1642 22 18.75V13C22 11.9292 21.252 11.0331 20.25 10.8058V7.78411C20.2503 7.77257 20.2503 7.761 20.25 7.7494ZM6 6C5.58579 6 5.25 6.33579 5.25 6.75V7.22139L7.32449 7.89419C7.92607 8.0893 8.57393 8.0893 9.17552 7.89419L10.6117 7.42839C11.5141 7.13573 12.4859 7.13573 13.3883 7.42839L14.8245 7.89419C15.4261 8.0893 16.0739 8.0893 16.6755 7.89419L18.75 7.22139V6.75C18.75 6.33579 18.4142 6 18 6H6ZM18.75 8.7983L17.1383 9.32103C16.2359 9.61369 15.2641 9.61369 14.3617 9.32103L12.9255 8.85523C12.3239 8.66012 11.6761 8.66012 11.0745 8.85523L9.63827 9.32103C8.73589 9.61369 7.76411 9.61369 6.86173 9.32103L5.25 8.7983V10.75H18.75V8.7983ZM4.25 12.25H19.75C20.1642 12.25 20.5 12.5858 20.5 13V13.8298L17.5505 14.7864C16.9489 14.9815 16.3011 14.9815 15.6995 14.7864L13.3883 14.0368C12.4859 13.7441 11.5141 13.7441 10.6117 14.0368L8.30051 14.7864C7.69893 14.9815 7.05107 14.9815 6.44949 14.7864L3.5 13.8298V13C3.5 12.5858 3.83579 12.25 4.25 12.25ZM20.5 15.4067L18.0133 16.2132C17.1109 16.5059 16.1391 16.5059 15.2367 16.2132L12.9255 15.4636C12.3239 15.2685 11.6761 15.2685 11.0745 15.4636L8.76327 16.2132C7.86089 16.5059 6.88911 16.5059 5.98673 16.2132L3.5 15.4067V18H20.5V15.4067Z" fill="#fe9a00"/>
+</svg>
+
+            </div>
+            <h3 class="font-bold text-zinc-900 dark:text-white text-lg">
+              Aniversários
+            </h3>
+            <p
+              class="text-sm text-zinc-600 dark:text-white leading-relaxed flex-1"
+            >
+              Celebrações que ficam na memória: da festa íntima à grande gala,
+              criamos o ambiente certo para cada momento.
+            </p>
+          </div>
+          <div
+            class="reveal delay-300 group dark:bg-black rounded-2xl p-6 flex flex-col gap-4 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-default"
+          >
+            <div
+              class="w-12 h-12 rounded-xl bg-amber-50 dark:bg-amber-950/40 flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-amber-500">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0M12 12.75h.008v.008H12v-.008Z" />
+</svg>
+
+            </div>
+            <h3 class="font-bold text-zinc-900 dark:text-white text-lg">
+              Corporativos
+            </h3>
+            <p
+              class="text-sm text-zinc-600 dark:text-white leading-relaxed flex-1"
+            >
+              Eventos empresariais com impacto — team buildings, conferências e
+              jantares de gala que elevam a imagem da sua empresa.
+            </p>
+          </div>
+          <div
+            class="reveal delay-400 group dark:bg-black rounded-2xl p-6 flex flex-col gap-4 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-default"
+          >
+            <div
+              class="w-12 h-12 rounded-xl bg-amber-50 dark:bg-amber-950/40 flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6 text-amber-500"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"
+                />
+              </svg>
+            </div>
+            <h3 class="font-bold text-zinc-900 dark:text-white text-lg">
+              Lançamentos
+            </h3>
+            <p
+              class="text-sm text-zinc-600 dark:text-white leading-relaxed flex-1"
+            >
+              Estreias, lançamentos de produtos e inaugurações pensadas para
+              criar buzz e impressionar desde o primeiro momento.
+            </p>
+          </div>
+        </div>
+        <!-- Gallery -->
+        <div class="reveal mb-4">
+          <h3 class="text-xl font-bold text-zinc-900 dark:text-white mb-6">
+            Exemplos de eventos
+          </h3>
+        </div>
+        <div class="grid md:grid-cols-3 gap-4 mb-16">
+          <div
+            class="reveal delay-100 group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer"
+          >
+            <img
+              src="assets/event1.jpg"
+              alt="Evento especial"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-end p-4"
+            >
+              <span
+                class="text-white font-semibold text-sm translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300"
+                >Evento especial</span
+              >
+            </div>
+          </div>
+          <div
+            class="reveal delay-200 group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer"
+          >
+            <img
+              src="assets/event2.jpg"
+              alt="Celebração única"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-end p-4"
+            >
+              <span
+                class="text-white font-semibold text-sm translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300"
+                >Celebração única</span
+              >
+            </div>
+          </div>
+          <div
+            class="reveal delay-300 group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer"
+          >
+            <img
+              src="assets/event3.jpg"
+              alt="Momento inesquecível"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-end p-4"
+            >
+              <span
+                class="text-white font-semibold text-sm translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300"
+                >Momento inesquecível</span
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Price accordion -->
+        <div class="reveal">
+          <button
+            id="price-toggle"
+            class="w-full flex items-center justify-between px-6 py-4 dark:bg-black rounded-2xl font-bold text-zinc-900 dark:text-white hover:shadow-md transition-all duration-200"
+          >
+            <span>Política de Preço</span>  
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" id="price-icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+</svg>
+
+          </button>
+          <div
+            id="price-content"
+            class="overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out"
+          >
+            <div
+              class="dark:bg-black rounded-2xl p-6 grid sm:grid-cols-3 gap-6"
+            >
+              <div>
+                <h4 class="font-bold text-zinc-900 dark:text-white mb-3">
+                  Método de Determinação
+                </h4>
+                <ul class="space-y-1.5">
+                  <li class="flex gap-2 text-sm text-zinc-600 dark:text-white">
+                    <span class="text-amber-500 mt-0.5 shrink-0">•</span> Custos
+                    operacionais diretos (fornecedores, materiais, deslocações,
+                    etc.);
+                  </li>
+                  <li class="flex gap-2 text-sm text-zinc-600 dark:text-white">
+                    <span class="text-amber-500 mt-0.5 shrink-0">•</span> Margem
+                    de lucro adequada ao posicionamento premium;
+                  </li>
+                  <li class="flex gap-2 text-sm text-zinc-600 dark:text-white">
+                    <span class="text-amber-500 mt-0.5 shrink-0">•</span>
+                    Análise comparativa com concorrentes do mesmo segmento.
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-zinc-900 dark:text-white mb-3">
+                  Condições de Venda
+                </h4>
+                <ul class="space-y-1.5">
+                  <li class="flex gap-2 text-sm text-zinc-600 dark:text-white">
+                    <span class="text-amber-500 mt-0.5 shrink-0">•</span>
+                    Orçamentos personalizados conforme tipo e dimensão do
+                    evento;
+                  </li>
+                  <li class="flex gap-2 text-sm text-zinc-600 dark:text-white">
+                    <span class="text-amber-500 mt-0.5 shrink-0">•</span>
+                    Pagamento faseado (sinalização + liquidação final);
+                  </li>
+                  <li class="flex gap-2 text-sm text-zinc-600 dark:text-white">
+                    <span class="text-amber-500 mt-0.5 shrink-0">•</span>
+                    Descontos possíveis em eventos de grande porte ou contratos
+                    recorrentes.
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-zinc-900 dark:text-white mb-3">
+                  Objetivos
+                </h4>
+                <ul class="space-y-1.5">
+                  <li class="flex gap-2 text-sm text-zinc-600 dark:text-white">
+                    <span class="text-amber-500 mt-0.5 shrink-0">•</span>
+                    Equilibrar acessibilidade e rentabilidade;
+                  </li>
+                  <li class="flex gap-2 text-sm text-zinc-600 dark:text-white">
+                    <span class="text-amber-500 mt-0.5 shrink-0">•</span>
+                    Garantir preços justos mantendo qualidade premium;
+                  </li>
+                  <li class="flex gap-2 text-sm text-zinc-600 dark:text-white">
+                    <span class="text-amber-500 mt-0.5 shrink-0">•</span>
+                    Fidelizar clientes através de transparência e excelência.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Contact -->
     <section id="contact" class="py-20 bg-zinc-50 dark:bg-zinc-950">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="reveal text-center max-w-2xl mx-auto mb-14">
-                <span
-                    class="inline-block px-4 py-1 mb-4 text-xs font-semibold uppercase tracking-widest text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 rounded-full border border-amber-200 dark:border-amber-800">Fala
-                    connosco</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white">
-                    Contacto
-                </h2>
-                <p class="mt-4 text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                    Pronta para criar algo especial? Contacta-nos através de qualquer
-                    canal abaixo — respondemos o mais rápido possível.
-                </p>
-            </div>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="flex flex-col gap-4">
-                    <a href="https://www.instagram.com/mellarieorganizacaodeeventos" target="_blank"
-                        class="reveal delay-100 group flex items-center gap-4 p-5 dark:bg-black rounded-2xl hover:shadow-xl shadow-pink-500/40 hover:-translate-y-0.5 transition-all duration-300">
-                        <div
-                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 flex items-center justify-center shadow-lg shrink-0 group-hover:scale-110 transition-transform duration-300">
-                            <i class="fa-brands fa-instagram text-white"></i>
-                        </div>
-                        <div>
-                            <p class="font-bold text-zinc-900 dark:text-white">Instagram</p>
-                            <p class="text-sm text-zinc-500 dark:text-zinc-400 break-all">
-                                @mellarieorganizacaodeeventos
-                            </p>
-                        </div>
-                    </a>
-                    <a href="https://wa.me/351000000000" target="_blank"
-                        class="reveal delay-200 group flex items-center gap-4 p-5 dark:bg-black rounded-2xl hover:shadow-xl shadow-green-500/40 hover:-translate-y-0.5 transition-all duration-300">
-                        <div
-                            class="w-12 h-12 rounded-xl bg-green-500 flex items-center justify-center shadow-lg shrink-0 group-hover:scale-110 transition-transform duration-300">
-                            <i class="fa-brands fa-whatsapp text-white"></i>
-                        </div>
-                        <div>
-                            <p class="font-bold text-zinc-900 dark:text-white">WhatsApp</p>
-                            <p class="text-sm text-zinc-500 dark:text-zinc-400 break-all">
-                                Envia-nos uma mensagem
-                            </p>
-                        </div>
-                    </a>
-                    <a href="mailto:mellarieorganizacaodeeventos@gmail.com"
-                        class="reveal delay-300 group flex items-center gap-4 p-5 dark:bg-black rounded-2xl hover:shadow-xl shadow-zinc-700/40 hover:-translate-y-0.5 transition-all duration-300">
-                        <div
-                            class="w-12 h-12 rounded-xl bg-zinc-700 flex items-center justify-center shadow-lg shrink-0 group-hover:scale-110 transition-transform duration-300">
-                            <i class="fa-solid fa-envelope text-white"></i>
-                        </div>
-                        <div>
-                            <p class="font-bold text-zinc-900 dark:text-white">Email</p>
-                            <p class="text-sm text-zinc-500 dark:text-zinc-400 break-all">
-                                mellarieorganizacaodeeventos@gmail.com
-                            </p>
-                        </div>
-                    </a>
-                </div>
-                <div class="reveal flex flex-col items-center gap-6">
-                    <div class="p-3 dark:bg-black rounded-3xl shadow-2xl shadow-amber-400/10">
-                        <div class="w-56 h-56 rounded-2xl overflow-hidden">
-                            <img src="assets/qrcode.png" alt="QR Code Instagram"
-                                class="w-full h-full object-cover dark:hidden" />
-                            <img src="assets/qrcodeW.png" alt="QR Code Instagram"
-                                class="w-full h-full object-cover hidden dark:block" />
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <p class="font-semibold text-zinc-800 dark:text-zinc-200">
-                            Aponta a câmara
-                        </p>
-                        <p class="text-sm text-zinc-500 dark:text-zinc-400">
-                            e entra diretamente no nosso Instagram
-                        </p>
-                    </div>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="reveal text-center max-w-2xl mx-auto mb-14">
+          <span
+            class="inline-block px-4 py-1 mb-4 text-xs font-semibold uppercase tracking-widest text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 rounded-full border border-amber-200 dark:border-amber-800"
+            >Fala connosco</span
+          >
+          <h2
+            class="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white"
+          >
+            Contacto
+          </h2>
+          <p class="mt-4 text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            Pronta para criar algo especial? Contacta-nos através de qualquer
+            canal abaixo — respondemos o mais rápido possível.
+          </p>
         </div>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="flex flex-col gap-4">
+            <a
+              href="https://www.instagram.com/mellarieorganizacaodeeventos"
+              target="_blank"
+              class="reveal delay-100 group flex items-center gap-4 p-5 dark:bg-black rounded-2xl hover:shadow-xl shadow-pink-500/40 hover:-translate-y-0.5 transition-all duration-300"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 flex items-center justify-center shadow-lg shrink-0 group-hover:scale-110 transition-transform duration-300"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.6672 12C8.6672 10.1591 10.1591 8.6664 12 8.6664C13.8409 8.6664 15.3336 10.1591 15.3336 12C15.3336 13.8409 13.8409 15.3336 12 15.3336C10.1591 15.3336 8.6672 13.8409 8.6672 12ZM6.86512 12C6.86512 14.836 9.164 17.1349 12 17.1349C14.836 17.1349 17.1349 14.836 17.1349 12C17.1349 9.164 14.836 6.86512 12 6.86512C9.164 6.86512 6.86512 9.164 6.86512 12ZM16.1382 6.66152C16.1381 6.89886 16.2084 7.13089 16.3401 7.32829C16.4719 7.52568 16.6593 7.67956 16.8785 7.77047C17.0977 7.86138 17.339 7.88525 17.5718 7.83904C17.8046 7.79283 18.0185 7.67862 18.1863 7.51087C18.3542 7.34311 18.4686 7.12934 18.515 6.89658C18.5614 6.66382 18.5377 6.42253 18.447 6.20322C18.3563 5.98392 18.2025 5.79644 18.0052 5.6645C17.808 5.53257 17.576 5.4621 17.3386 5.462H17.3382C17.02 5.46215 16.715 5.58856 16.49 5.81347C16.265 6.03837 16.1384 6.34339 16.1382 6.66152ZM7.96 20.1398C6.98504 20.0954 6.45512 19.933 6.10296 19.7958C5.63608 19.614 5.30296 19.3975 4.95272 19.0478C4.60248 18.698 4.38568 18.3652 4.20472 17.8983C4.06744 17.5463 3.90504 17.0162 3.86072 16.0413C3.81224 14.9872 3.80256 14.6706 3.80256 12.0001C3.80256 9.3296 3.81304 9.01384 3.86072 7.95888C3.90512 6.98392 4.06872 6.45488 4.20472 6.10184C4.38648 5.63496 4.60296 5.30184 4.95272 4.9516C5.30248 4.60136 5.63528 4.38456 6.10296 4.2036C6.45496 4.06632 6.98504 3.90392 7.96 3.8596C9.01408 3.81112 9.33072 3.80144 12 3.80144C14.6693 3.80144 14.9862 3.81192 16.0412 3.8596C17.0162 3.904 17.5452 4.0676 17.8982 4.2036C18.3651 4.38456 18.6982 4.60184 19.0485 4.9516C19.3987 5.30136 19.6147 5.63496 19.7965 6.10184C19.9338 6.45384 20.0962 6.98392 20.1405 7.95888C20.189 9.01384 20.1986 9.3296 20.1986 12.0001C20.1986 14.6706 20.189 14.9863 20.1405 16.0413C20.0961 17.0162 19.9329 17.5462 19.7965 17.8983C19.6147 18.3652 19.3982 18.6983 19.0485 19.0478C18.6987 19.3972 18.3651 19.614 17.8982 19.7958C17.5462 19.933 17.0162 20.0954 16.0412 20.1398C14.9871 20.1882 14.6705 20.1979 12 20.1979C9.32952 20.1979 9.01376 20.1882 7.96 20.1398ZM7.8772 2.06056C6.81264 2.10904 6.0852 2.27784 5.44992 2.52504C4.792 2.78032 4.23504 3.1228 3.67848 3.67848C3.12192 4.23416 2.78032 4.792 2.52504 5.44992C2.27784 6.0856 2.10904 6.81264 2.06056 7.8772C2.01128 8.94344 2 9.28432 2 12C2 14.7157 2.01128 15.0566 2.06056 16.1228C2.10904 17.1874 2.27784 17.9144 2.52504 18.5501C2.78032 19.2076 3.122 19.7661 3.67848 20.3215C4.23496 20.877 4.792 21.219 5.44992 21.475C6.0864 21.7222 6.81264 21.891 7.8772 21.9394C8.944 21.9879 9.28432 22 12 22C14.7157 22 15.0566 21.9887 16.1228 21.9394C17.1874 21.891 17.9144 21.7222 18.5501 21.475C19.2076 21.219 19.765 20.8772 20.3215 20.3215C20.8781 19.7658 21.219 19.2076 21.475 18.5501C21.7222 17.9144 21.8918 17.1874 21.9394 16.1228C21.9879 15.0558 21.9992 14.7157 21.9992 12C21.9992 9.28432 21.9879 8.94344 21.9394 7.8772C21.891 6.81256 21.7222 6.0852 21.475 5.44992C21.219 4.7924 20.8772 4.23504 20.3215 3.67848C19.7658 3.12192 19.2076 2.78032 18.5509 2.52504C17.9144 2.27784 17.1874 2.10824 16.1236 2.06056C15.0574 2.01208 14.7165 2 12.0008 2C9.28512 2 8.944 2.01128 7.8772 2.06056Z" fill="#ffffff"/>
+<path d="M8.6672 12C8.6672 10.1591 10.1591 8.6664 12 8.6664C13.8409 8.6664 15.3336 10.1591 15.3336 12C15.3336 13.8409 13.8409 15.3336 12 15.3336C10.1591 15.3336 8.6672 13.8409 8.6672 12ZM6.86512 12C6.86512 14.836 9.164 17.1349 12 17.1349C14.836 17.1349 17.1349 14.836 17.1349 12C17.1349 9.164 14.836 6.86512 12 6.86512C9.164 6.86512 6.86512 9.164 6.86512 12ZM16.1382 6.66152C16.1381 6.89886 16.2084 7.13089 16.3401 7.32829C16.4719 7.52568 16.6593 7.67956 16.8785 7.77047C17.0977 7.86138 17.339 7.88525 17.5718 7.83904C17.8046 7.79283 18.0185 7.67862 18.1863 7.51087C18.3542 7.34311 18.4686 7.12934 18.515 6.89658C18.5614 6.66382 18.5377 6.42253 18.447 6.20322C18.3563 5.98392 18.2025 5.79644 18.0052 5.6645C17.808 5.53257 17.576 5.4621 17.3386 5.462H17.3382C17.02 5.46215 16.715 5.58856 16.49 5.81347C16.265 6.03837 16.1384 6.34339 16.1382 6.66152ZM7.96 20.1398C6.98504 20.0954 6.45512 19.933 6.10296 19.7958C5.63608 19.614 5.30296 19.3975 4.95272 19.0478C4.60248 18.698 4.38568 18.3652 4.20472 17.8983C4.06744 17.5463 3.90504 17.0162 3.86072 16.0413C3.81224 14.9872 3.80256 14.6706 3.80256 12.0001C3.80256 9.3296 3.81304 9.01384 3.86072 7.95888C3.90512 6.98392 4.06872 6.45488 4.20472 6.10184C4.38648 5.63496 4.60296 5.30184 4.95272 4.9516C5.30248 4.60136 5.63528 4.38456 6.10296 4.2036C6.45496 4.06632 6.98504 3.90392 7.96 3.8596C9.01408 3.81112 9.33072 3.80144 12 3.80144C14.6693 3.80144 14.9862 3.81192 16.0412 3.8596C17.0162 3.904 17.5452 4.0676 17.8982 4.2036C18.3651 4.38456 18.6982 4.60184 19.0485 4.9516C19.3987 5.30136 19.6147 5.63496 19.7965 6.10184C19.9338 6.45384 20.0962 6.98392 20.1405 7.95888C20.189 9.01384 20.1986 9.3296 20.1986 12.0001C20.1986 14.6706 20.189 14.9863 20.1405 16.0413C20.0961 17.0162 19.9329 17.5462 19.7965 17.8983C19.6147 18.3652 19.3982 18.6983 19.0485 19.0478C18.6987 19.3972 18.3651 19.614 17.8982 19.7958C17.5462 19.933 17.0162 20.0954 16.0412 20.1398C14.9871 20.1882 14.6705 20.1979 12 20.1979C9.32952 20.1979 9.01376 20.1882 7.96 20.1398ZM7.8772 2.06056C6.81264 2.10904 6.0852 2.27784 5.44992 2.52504C4.792 2.78032 4.23504 3.1228 3.67848 3.67848C3.12192 4.23416 2.78032 4.792 2.52504 5.44992C2.27784 6.0856 2.10904 6.81264 2.06056 7.8772C2.01128 8.94344 2 9.28432 2 12C2 14.7157 2.01128 15.0566 2.06056 16.1228C2.10904 17.1874 2.27784 17.9144 2.52504 18.5501C2.78032 19.2076 3.122 19.7661 3.67848 20.3215C4.23496 20.877 4.792 21.219 5.44992 21.475C6.0864 21.7222 6.81264 21.891 7.8772 21.9394C8.944 21.9879 9.28432 22 12 22C14.7157 22 15.0566 21.9887 16.1228 21.9394C17.1874 21.891 17.9144 21.7222 18.5501 21.475C19.2076 21.219 19.765 20.8772 20.3215 20.3215C20.8781 19.7658 21.219 19.2076 21.475 18.5501C21.7222 17.9144 21.8918 17.1874 21.9394 16.1228C21.9879 15.0558 21.9992 14.7157 21.9992 12C21.9992 9.28432 21.9879 8.94344 21.9394 7.8772C21.891 6.81256 21.7222 6.0852 21.475 5.44992C21.219 4.7924 20.8772 4.23504 20.3215 3.67848C19.7658 3.12192 19.2076 2.78032 18.5509 2.52504C17.9144 2.27784 17.1874 2.10824 16.1236 2.06056C15.0574 2.01208 14.7165 2 12.0008 2C9.28512 2 8.944 2.01128 7.8772 2.06056Z" fill="#ffffff"/>
+</svg>
+
+              </div>
+              <div>
+                <p class="font-bold text-zinc-900 dark:text-white">Instagram</p>
+                <p class="text-sm text-zinc-500 dark:text-zinc-400 break-all">
+                  @mellarieorganizacaodeeventos
+                </p>
+              </div>
+            </a>
+            <a
+              href="https://wa.me/351000000000"
+              target="_blank"
+              class="reveal delay-200 group flex items-center gap-4 p-5 dark:bg-black rounded-2xl hover:shadow-xl shadow-green-500/40 hover:-translate-y-0.5 transition-all duration-300"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-green-500 flex items-center justify-center shadow-lg shrink-0 group-hover:scale-110 transition-transform duration-300"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M19.074 4.89389C17.2091 3.02894 14.6689 2 12.0644 2C6.59814 2 2.12869 6.4373 2.12869 11.9035C2.12869 13.672 2.57885 15.3441 3.44702 16.8875L2.03223 22L7.33769 20.6495C8.78464 21.4212 10.4245 21.8714 12.0965 21.8714C17.5306 21.8392 21.9679 17.4019 21.9679 11.9035C21.9679 9.26688 20.939 6.791 19.074 4.89389ZM12.0322 20.1672C10.5853 20.1672 9.07403 19.7492 7.82001 18.9775L7.49846 18.7846L4.37949 19.5884L5.24766 16.5659L5.05473 16.2444C4.25088 14.926 3.80072 13.3826 3.80072 11.8392C3.80072 7.30547 7.46631 3.63987 12.0322 3.63987C14.2187 3.63987 16.2766 4.50804 17.82 6.05145C19.3634 7.59486 20.2316 9.68489 20.2316 11.9035C20.2959 16.5016 16.566 20.1672 12.0322 20.1672ZM16.566 13.9936C16.3088 13.865 15.119 13.254 14.8297 13.2219C14.6046 13.1254 14.4116 13.0932 14.283 13.3505C14.1544 13.6077 13.6399 14.1222 13.5113 14.3151C13.3827 14.4437 13.2541 14.508 12.9647 14.3473C12.7075 14.2187 11.9358 13.9936 10.9711 13.0932C10.2316 12.4502 9.71711 11.6463 9.62065 11.3569C9.49203 11.0997 9.5885 11.0032 9.74927 10.8424C9.87788 10.7138 10.0065 10.5852 10.103 10.3923C10.2316 10.2637 10.2316 10.135 10.3602 9.97428C10.4888 9.84566 10.3924 9.65274 10.328 9.52412C10.2316 9.3955 9.78142 8.17364 9.55634 7.65917C9.36342 7.1447 9.13834 7.24116 9.00972 7.24116C8.8811 7.24116 8.68817 7.24116 8.55956 7.24116C8.43094 7.24116 8.1094 7.27331 7.91647 7.5627C7.69139 7.81994 7.0483 8.43087 7.0483 9.65273C7.0483 10.8746 7.91647 12 8.07724 12.2251C8.20586 12.3537 9.84573 14.8939 12.2895 15.9871C12.8682 16.2444 13.3184 16.4051 13.7043 16.5338C14.283 16.7267 14.8297 16.6624 15.2477 16.6302C15.73 16.5981 16.6946 16.0514 16.9197 15.4405C17.1126 14.8939 17.1126 14.3473 17.0483 14.2508C16.984 14.1865 16.7911 14.09 16.566 13.9936Z" fill="#ffffff"/>
+</svg>
+
+              </div>
+              <div>
+                <p class="font-bold text-zinc-900 dark:text-white">WhatsApp</p>
+                <p class="text-sm text-zinc-500 dark:text-zinc-400 break-all">
+                  Envia-nos uma mensagem
+                </p>
+              </div>
+            </a>
+            <a
+              href="mailto:mellarieorganizacaodeeventos@gmail.com"
+              class="reveal delay-300 group flex items-center gap-4 p-5 dark:bg-black rounded-2xl hover:shadow-xl shadow-zinc-700/40 hover:-translate-y-0.5 transition-all duration-300"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-zinc-700 flex items-center justify-center shadow-lg shrink-0 group-hover:scale-110 transition-transform duration-300"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M22 6.25649V17.25C22 18.4926 20.9926 19.5 19.75 19.5H4.25C3.00736 19.5 2 18.4926 2 17.25V6.23398C2 6.22372 2.00021 6.2135 2.00061 6.20334C2.01781 5.25972 2.78812 4.5 3.73592 4.5H20.2644C21.2229 4.5 22 5.27697 22.0001 6.23549C22.0001 6.24249 22.0001 6.24949 22 6.25649ZM3.5 8.187V17.25C3.5 17.6642 3.83579 18 4.25 18H19.75C20.1642 18 20.5 17.6642 20.5 17.25V8.18747L13.2873 13.2171C12.5141 13.7563 11.4866 13.7563 10.7134 13.2171L3.5 8.187ZM20.5 6.2286L20.5 6.23398V6.24336C20.4976 6.31753 20.4604 6.38643 20.3992 6.42905L12.4293 11.9867C12.1716 12.1664 11.8291 12.1664 11.5713 11.9867L3.60116 6.42885C3.538 6.38481 3.50035 6.31268 3.50032 6.23568C3.50028 6.10553 3.60577 6 3.73592 6H20.2644C20.3922 6 20.4963 6.10171 20.5 6.2286Z" fill="#ffffff"/>
+</svg>
+
+              </div>
+              <div>
+                <p class="font-bold text-zinc-900 dark:text-white">Email</p>
+                <p class="text-sm text-zinc-500 dark:text-zinc-400 break-all">
+                  mellarieorganizacaodeeventos@gmail.com
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="reveal flex flex-col items-center gap-6">
+            <div
+              class="p-3 dark:bg-black rounded-3xl shadow-2xl shadow-amber-400/10"
+            >
+              <div class="w-56 h-56 rounded-2xl overflow-hidden">
+                <img
+                  src="assets/qrcode.png"
+                  alt="QR Code Instagram"
+                  class="w-full h-full object-cover dark:hidden"
+                />
+                <img
+                  src="assets/qrcodeW.png"
+                  alt="QR Code Instagram"
+                  class="w-full h-full object-cover hidden dark:block"
+                />
+              </div>
+            </div>
+            <div class="text-center">
+              <p class="font-semibold text-zinc-800 dark:text-zinc-200">
+                Aponta a câmara
+              </p>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400">
+                e entra diretamente no nosso Instagram
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-zinc-900 dark:bg-black text-zinc-400">
-        <div class="max-w-7xl mx-auto px-6 py-14">
-            <div class="grid md:grid-cols-3 gap-10 items-start">
-                <div class="flex flex-col items-start gap-4">
-                    <a href="#home"><img src="assets/logo.png" alt="Mellarie" class="h-16 w-auto" /></a>
-                    <p class="text-sm leading-relaxed max-w-xs">
-                        Transformamos a tua história em experiências inesquecíveis —
-                        eventos pensados ao detalhe, 100% personalizados.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-widest">
-                        Navegação
-                    </h4>
-                    <ul class="flex flex-col gap-2">
-                        <li>
-                            <a href="#home"
-                                class="text-sm hover:text-amber-400 transition-colors duration-200">Início</a>
-                        </li>
-                        <li>
-                            <a href="#about" class="text-sm hover:text-amber-400 transition-colors duration-200">Quem
-                                somos</a>
-                        </li>
-                        <li>
-                            <a href="#services"
-                                class="text-sm hover:text-amber-400 transition-colors duration-200">Serviços</a>
-                        </li>
-                        <li>
-                            <a href="#contact"
-                                class="text-sm hover:text-amber-400 transition-colors duration-200">Contacto</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="flex flex-col gap-4">
-                    <h4 class="text-white font-semibold text-sm uppercase tracking-widest">
-                        Fala connosco
-                    </h4>
-                    <a href="https://www.instagram.com/mellarieorganizacaodeeventos" target="_blank"
-                        class="inline-block px-6 py-3 bg-amber-400 hover:bg-amber-500 text-zinc-900 font-bold text-sm rounded-xl shadow-md hover:scale-105 transition">Pede
-                        o teu orçamento</a>
-                    <div class="flex gap-3 mt-1">
-                        <a href="https://www.instagram.com/mellarieorganizacaodeeventos" target="_blank"
-                            class="w-9 h-9 rounded-lg bg-zinc-800 hover:bg-amber-400 hover:text-zinc-900 flex items-center justify-center transition-all duration-200"><i
-                                class="fa-brands fa-instagram"></i></a>
-                        <a href="https://wa.me/351000000000" target="_blank"
-                            class="w-9 h-9 rounded-lg bg-zinc-800 hover:bg-amber-400 hover:text-zinc-900 flex items-center justify-center transition-all duration-200"><i
-                                class="fa-brands fa-whatsapp"></i></a>
-                        <a href="mailto:mellarieorganizacaodeeventos@gmail.com"
-                            class="w-9 h-9 rounded-lg bg-zinc-800 hover:bg-amber-400 hover:text-zinc-900 flex items-center justify-center transition-all duration-200"><i
-                                class="fa-solid fa-envelope"></i></a>
-                    </div>
-                </div>
+      <div class="max-w-7xl mx-auto px-6 py-14">
+        <div class="grid md:grid-cols-3 gap-10 items-start">
+          <div class="flex flex-col items-start gap-4">
+            <a href="#home"
+              ><img src="assets/logo.png" alt="Mellarie" class="h-16 w-auto"
+            /></a>
+            <p class="text-sm leading-relaxed max-w-xs">
+              Transformamos a tua história em experiências inesquecíveis —
+              eventos pensados ao detalhe, 100% personalizados.
+            </p>
+          </div>
+          <div>
+            <h4
+              class="text-white font-semibold mb-4 text-sm uppercase tracking-widest"
+            >
+              Navegação
+            </h4>
+            <ul class="flex flex-col gap-2">
+              <li>
+                <a
+                  href="#home"
+                  class="text-sm hover:text-amber-400 transition-colors duration-200"
+                  >Início</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-sm hover:text-amber-400 transition-colors duration-200"
+                  >Quem somos</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-sm hover:text-amber-400 transition-colors duration-200"
+                  >Serviços</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-sm hover:text-amber-400 transition-colors duration-200"
+                  >Contacto</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-4">
+            <h4
+              class="text-white font-semibold text-sm uppercase tracking-widest"
+            >
+              Fala connosco
+            </h4>
+            <a
+              href="https://www.instagram.com/mellarieorganizacaodeeventos"
+              target="_blank"
+              class="inline-block px-6 py-3 bg-amber-400 hover:bg-amber-500 text-zinc-900 font-bold text-sm rounded-xl shadow-md hover:scale-105 transition"
+              >Pede o teu orçamento</a
+            >
+            <div class="flex gap-3 mt-1">
+              <a
+                href="https://www.instagram.com/mellarieorganizacaodeeventos"
+                target="_blank"
+                class="w-9 h-9 rounded-lg bg-zinc-800 hover:bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 hover:text-zinc-900 flex items-center justify-center transition-all duration-200"
+                ><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.6672 12C8.6672 10.1591 10.1591 8.6664 12 8.6664C13.8409 8.6664 15.3336 10.1591 15.3336 12C15.3336 13.8409 13.8409 15.3336 12 15.3336C10.1591 15.3336 8.6672 13.8409 8.6672 12ZM6.86512 12C6.86512 14.836 9.164 17.1349 12 17.1349C14.836 17.1349 17.1349 14.836 17.1349 12C17.1349 9.164 14.836 6.86512 12 6.86512C9.164 6.86512 6.86512 9.164 6.86512 12ZM16.1382 6.66152C16.1381 6.89886 16.2084 7.13089 16.3401 7.32829C16.4719 7.52568 16.6593 7.67956 16.8785 7.77047C17.0977 7.86138 17.339 7.88525 17.5718 7.83904C17.8046 7.79283 18.0185 7.67862 18.1863 7.51087C18.3542 7.34311 18.4686 7.12934 18.515 6.89658C18.5614 6.66382 18.5377 6.42253 18.447 6.20322C18.3563 5.98392 18.2025 5.79644 18.0052 5.6645C17.808 5.53257 17.576 5.4621 17.3386 5.462H17.3382C17.02 5.46215 16.715 5.58856 16.49 5.81347C16.265 6.03837 16.1384 6.34339 16.1382 6.66152ZM7.96 20.1398C6.98504 20.0954 6.45512 19.933 6.10296 19.7958C5.63608 19.614 5.30296 19.3975 4.95272 19.0478C4.60248 18.698 4.38568 18.3652 4.20472 17.8983C4.06744 17.5463 3.90504 17.0162 3.86072 16.0413C3.81224 14.9872 3.80256 14.6706 3.80256 12.0001C3.80256 9.3296 3.81304 9.01384 3.86072 7.95888C3.90512 6.98392 4.06872 6.45488 4.20472 6.10184C4.38648 5.63496 4.60296 5.30184 4.95272 4.9516C5.30248 4.60136 5.63528 4.38456 6.10296 4.2036C6.45496 4.06632 6.98504 3.90392 7.96 3.8596C9.01408 3.81112 9.33072 3.80144 12 3.80144C14.6693 3.80144 14.9862 3.81192 16.0412 3.8596C17.0162 3.904 17.5452 4.0676 17.8982 4.2036C18.3651 4.38456 18.6982 4.60184 19.0485 4.9516C19.3987 5.30136 19.6147 5.63496 19.7965 6.10184C19.9338 6.45384 20.0962 6.98392 20.1405 7.95888C20.189 9.01384 20.1986 9.3296 20.1986 12.0001C20.1986 14.6706 20.189 14.9863 20.1405 16.0413C20.0961 17.0162 19.9329 17.5462 19.7965 17.8983C19.6147 18.3652 19.3982 18.6983 19.0485 19.0478C18.6987 19.3972 18.3651 19.614 17.8982 19.7958C17.5462 19.933 17.0162 20.0954 16.0412 20.1398C14.9871 20.1882 14.6705 20.1979 12 20.1979C9.32952 20.1979 9.01376 20.1882 7.96 20.1398ZM7.8772 2.06056C6.81264 2.10904 6.0852 2.27784 5.44992 2.52504C4.792 2.78032 4.23504 3.1228 3.67848 3.67848C3.12192 4.23416 2.78032 4.792 2.52504 5.44992C2.27784 6.0856 2.10904 6.81264 2.06056 7.8772C2.01128 8.94344 2 9.28432 2 12C2 14.7157 2.01128 15.0566 2.06056 16.1228C2.10904 17.1874 2.27784 17.9144 2.52504 18.5501C2.78032 19.2076 3.122 19.7661 3.67848 20.3215C4.23496 20.877 4.792 21.219 5.44992 21.475C6.0864 21.7222 6.81264 21.891 7.8772 21.9394C8.944 21.9879 9.28432 22 12 22C14.7157 22 15.0566 21.9887 16.1228 21.9394C17.1874 21.891 17.9144 21.7222 18.5501 21.475C19.2076 21.219 19.765 20.8772 20.3215 20.3215C20.8781 19.7658 21.219 19.2076 21.475 18.5501C21.7222 17.9144 21.8918 17.1874 21.9394 16.1228C21.9879 15.0558 21.9992 14.7157 21.9992 12C21.9992 9.28432 21.9879 8.94344 21.9394 7.8772C21.891 6.81256 21.7222 6.0852 21.475 5.44992C21.219 4.7924 20.8772 4.23504 20.3215 3.67848C19.7658 3.12192 19.2076 2.78032 18.5509 2.52504C17.9144 2.27784 17.1874 2.10824 16.1236 2.06056C15.0574 2.01208 14.7165 2 12.0008 2C9.28512 2 8.944 2.01128 7.8772 2.06056Z" fill="#ffffff"/>
+<path d="M8.6672 12C8.6672 10.1591 10.1591 8.6664 12 8.6664C13.8409 8.6664 15.3336 10.1591 15.3336 12C15.3336 13.8409 13.8409 15.3336 12 15.3336C10.1591 15.3336 8.6672 13.8409 8.6672 12ZM6.86512 12C6.86512 14.836 9.164 17.1349 12 17.1349C14.836 17.1349 17.1349 14.836 17.1349 12C17.1349 9.164 14.836 6.86512 12 6.86512C9.164 6.86512 6.86512 9.164 6.86512 12ZM16.1382 6.66152C16.1381 6.89886 16.2084 7.13089 16.3401 7.32829C16.4719 7.52568 16.6593 7.67956 16.8785 7.77047C17.0977 7.86138 17.339 7.88525 17.5718 7.83904C17.8046 7.79283 18.0185 7.67862 18.1863 7.51087C18.3542 7.34311 18.4686 7.12934 18.515 6.89658C18.5614 6.66382 18.5377 6.42253 18.447 6.20322C18.3563 5.98392 18.2025 5.79644 18.0052 5.6645C17.808 5.53257 17.576 5.4621 17.3386 5.462H17.3382C17.02 5.46215 16.715 5.58856 16.49 5.81347C16.265 6.03837 16.1384 6.34339 16.1382 6.66152ZM7.96 20.1398C6.98504 20.0954 6.45512 19.933 6.10296 19.7958C5.63608 19.614 5.30296 19.3975 4.95272 19.0478C4.60248 18.698 4.38568 18.3652 4.20472 17.8983C4.06744 17.5463 3.90504 17.0162 3.86072 16.0413C3.81224 14.9872 3.80256 14.6706 3.80256 12.0001C3.80256 9.3296 3.81304 9.01384 3.86072 7.95888C3.90512 6.98392 4.06872 6.45488 4.20472 6.10184C4.38648 5.63496 4.60296 5.30184 4.95272 4.9516C5.30248 4.60136 5.63528 4.38456 6.10296 4.2036C6.45496 4.06632 6.98504 3.90392 7.96 3.8596C9.01408 3.81112 9.33072 3.80144 12 3.80144C14.6693 3.80144 14.9862 3.81192 16.0412 3.8596C17.0162 3.904 17.5452 4.0676 17.8982 4.2036C18.3651 4.38456 18.6982 4.60184 19.0485 4.9516C19.3987 5.30136 19.6147 5.63496 19.7965 6.10184C19.9338 6.45384 20.0962 6.98392 20.1405 7.95888C20.189 9.01384 20.1986 9.3296 20.1986 12.0001C20.1986 14.6706 20.189 14.9863 20.1405 16.0413C20.0961 17.0162 19.9329 17.5462 19.7965 17.8983C19.6147 18.3652 19.3982 18.6983 19.0485 19.0478C18.6987 19.3972 18.3651 19.614 17.8982 19.7958C17.5462 19.933 17.0162 20.0954 16.0412 20.1398C14.9871 20.1882 14.6705 20.1979 12 20.1979C9.32952 20.1979 9.01376 20.1882 7.96 20.1398ZM7.8772 2.06056C6.81264 2.10904 6.0852 2.27784 5.44992 2.52504C4.792 2.78032 4.23504 3.1228 3.67848 3.67848C3.12192 4.23416 2.78032 4.792 2.52504 5.44992C2.27784 6.0856 2.10904 6.81264 2.06056 7.8772C2.01128 8.94344 2 9.28432 2 12C2 14.7157 2.01128 15.0566 2.06056 16.1228C2.10904 17.1874 2.27784 17.9144 2.52504 18.5501C2.78032 19.2076 3.122 19.7661 3.67848 20.3215C4.23496 20.877 4.792 21.219 5.44992 21.475C6.0864 21.7222 6.81264 21.891 7.8772 21.9394C8.944 21.9879 9.28432 22 12 22C14.7157 22 15.0566 21.9887 16.1228 21.9394C17.1874 21.891 17.9144 21.7222 18.5501 21.475C19.2076 21.219 19.765 20.8772 20.3215 20.3215C20.8781 19.7658 21.219 19.2076 21.475 18.5501C21.7222 17.9144 21.8918 17.1874 21.9394 16.1228C21.9879 15.0558 21.9992 14.7157 21.9992 12C21.9992 9.28432 21.9879 8.94344 21.9394 7.8772C21.891 6.81256 21.7222 6.0852 21.475 5.44992C21.219 4.7924 20.8772 4.23504 20.3215 3.67848C19.7658 3.12192 19.2076 2.78032 18.5509 2.52504C17.9144 2.27784 17.1874 2.10824 16.1236 2.06056C15.0574 2.01208 14.7165 2 12.0008 2C9.28512 2 8.944 2.01128 7.8772 2.06056Z" fill="#ffffff"/>
+</svg>
+</a>
+              <a
+                href="https://wa.me/351000000000"
+                target="_blank"
+                class="w-9 h-9 rounded-lg bg-zinc-800 hover:bg-green-500 hover:text-zinc-900 flex items-center justify-center transition-all duration-200"
+                ><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M19.074 4.89389C17.2091 3.02894 14.6689 2 12.0644 2C6.59814 2 2.12869 6.4373 2.12869 11.9035C2.12869 13.672 2.57885 15.3441 3.44702 16.8875L2.03223 22L7.33769 20.6495C8.78464 21.4212 10.4245 21.8714 12.0965 21.8714C17.5306 21.8392 21.9679 17.4019 21.9679 11.9035C21.9679 9.26688 20.939 6.791 19.074 4.89389ZM12.0322 20.1672C10.5853 20.1672 9.07403 19.7492 7.82001 18.9775L7.49846 18.7846L4.37949 19.5884L5.24766 16.5659L5.05473 16.2444C4.25088 14.926 3.80072 13.3826 3.80072 11.8392C3.80072 7.30547 7.46631 3.63987 12.0322 3.63987C14.2187 3.63987 16.2766 4.50804 17.82 6.05145C19.3634 7.59486 20.2316 9.68489 20.2316 11.9035C20.2959 16.5016 16.566 20.1672 12.0322 20.1672ZM16.566 13.9936C16.3088 13.865 15.119 13.254 14.8297 13.2219C14.6046 13.1254 14.4116 13.0932 14.283 13.3505C14.1544 13.6077 13.6399 14.1222 13.5113 14.3151C13.3827 14.4437 13.2541 14.508 12.9647 14.3473C12.7075 14.2187 11.9358 13.9936 10.9711 13.0932C10.2316 12.4502 9.71711 11.6463 9.62065 11.3569C9.49203 11.0997 9.5885 11.0032 9.74927 10.8424C9.87788 10.7138 10.0065 10.5852 10.103 10.3923C10.2316 10.2637 10.2316 10.135 10.3602 9.97428C10.4888 9.84566 10.3924 9.65274 10.328 9.52412C10.2316 9.3955 9.78142 8.17364 9.55634 7.65917C9.36342 7.1447 9.13834 7.24116 9.00972 7.24116C8.8811 7.24116 8.68817 7.24116 8.55956 7.24116C8.43094 7.24116 8.1094 7.27331 7.91647 7.5627C7.69139 7.81994 7.0483 8.43087 7.0483 9.65273C7.0483 10.8746 7.91647 12 8.07724 12.2251C8.20586 12.3537 9.84573 14.8939 12.2895 15.9871C12.8682 16.2444 13.3184 16.4051 13.7043 16.5338C14.283 16.7267 14.8297 16.6624 15.2477 16.6302C15.73 16.5981 16.6946 16.0514 16.9197 15.4405C17.1126 14.8939 17.1126 14.3473 17.0483 14.2508C16.984 14.1865 16.7911 14.09 16.566 13.9936Z" fill="#ffffff"/>
+</svg>
+</a>
+              <a
+                href="mailto:mellarieorganizacaodeeventos@gmail.com"
+                class="w-9 h-9 rounded-lg bg-zinc-800 hover:bg-amber-400 hover:text-zinc-900 flex items-center justify-center transition-all duration-200"
+                ><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M22 6.25649V17.25C22 18.4926 20.9926 19.5 19.75 19.5H4.25C3.00736 19.5 2 18.4926 2 17.25V6.23398C2 6.22372 2.00021 6.2135 2.00061 6.20334C2.01781 5.25972 2.78812 4.5 3.73592 4.5H20.2644C21.2229 4.5 22 5.27697 22.0001 6.23549C22.0001 6.24249 22.0001 6.24949 22 6.25649ZM3.5 8.187V17.25C3.5 17.6642 3.83579 18 4.25 18H19.75C20.1642 18 20.5 17.6642 20.5 17.25V8.18747L13.2873 13.2171C12.5141 13.7563 11.4866 13.7563 10.7134 13.2171L3.5 8.187ZM20.5 6.2286L20.5 6.23398V6.24336C20.4976 6.31753 20.4604 6.38643 20.3992 6.42905L12.4293 11.9867C12.1716 12.1664 11.8291 12.1664 11.5713 11.9867L3.60116 6.42885C3.538 6.38481 3.50035 6.31268 3.50032 6.23568C3.50028 6.10553 3.60577 6 3.73592 6H20.2644C20.3922 6 20.4963 6.10171 20.5 6.2286Z" fill="#ffffff"/>
+</svg>
+</a>
             </div>
-            <hr class="my-10 border-zinc-800" />
-            <div class="flex items-center justify-center gap-3 text-sm">
-                <p>
-                    ©
-                    <script>
-                        document.write(new Date().getFullYear());
-                    </script>
-                    Mellarie — Organização de Eventos. Todos os direitos reservados.
-                </p>
-            </div>
+          </div>
         </div>
+        <hr class="my-10 border-zinc-800" />
+        <div class="flex items-center justify-center gap-3 text-sm">
+          <p>
+            ©
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            Mellarie — Organização de Eventos. Todos os direitos reservados.
+          </p>
+        </div>
+      </div>
     </footer>
 
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
